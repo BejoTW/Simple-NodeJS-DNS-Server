@@ -7,36 +7,34 @@ Requirements:
 
 Running the test:
 
-    #Terminal 1 - Type :-
-    ~> cd /path/to/Simple-NodeJS-DNS-Server
-    ~> node dns-server-test.js
-    #output
-    Listening on 53
+Server:
     
-&nbsp;
-
-    #Terminal 2 - Type :-
-    ~> dig www.facebook.com @127.0.0.1
-    ~> dig test.dns @127.0.0.1
+    node DNSServer.js
     
-    #output
-    ; <<>> DiG 9.8.1-P1 <<>> test.dns @127.0.0.1
-    ;; global options: +cmd
-    ;; Got answer:
-    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3435
-    ;; flags: qr rd; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 0
-    ;; WARNING: recursion requested but not available
+User Clinet:
 
-    ;; QUESTION SECTION:
-    ;test.dns.			IN	A
-
-    ;; ANSWER SECTION:
-    test.dns.		30	IN	A	127.1.2.1
-    test.dns.		30	IN	A	127.1.2.2
-    test.dns.		30	IN	A	127.1.2.3
-
-    ;; Query time: 5 msec
-    ;; SERVER: 127.0.0.1#53(127.0.0.1)
-    ;; WHEN: Fri Aug 24 01:44:00 2012
-    ;; MSG SIZE  rcvd: 74
+    >nslookup
+    >server x.x.x.x
+    >www.google.com
     
+    Output
+    > www.google.com
+    Server:		10.5.161.106
+    Address:	10.5.161.106#53
+    
+    Non-authoritative answer:
+    Name:	www.google.com
+    Address: 74.125.23.103
+    Name:	www.google.com
+    Address: 74.125.23.104
+    Name:	www.google.com
+    Address: 74.125.23.99
+    Name:	www.google.com
+    Address: 74.125.23.147
+    Name:	www.google.com
+    Address: 74.125.23.106
+    Name:	www.google.com
+    Address: 74.125.23.105
+    > trailers.apple.com
+    Server:		10.5.161.106
+    Address:	10.5.161.106#53
