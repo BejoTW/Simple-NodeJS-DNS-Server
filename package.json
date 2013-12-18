@@ -4,6 +4,8 @@
   "dependencies"   : {
                       "native-dns" : "0.4.1"
                      },
+  "author"         : "BEJO Li",
+  "email"          : "bejo.mob@gmail.com",
   "keywords"       : ["dns", "dns server"],
   "main"           : "DNSServer.js",
   "version"        : "0.0.1",
