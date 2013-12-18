@@ -1,8 +1,12 @@
 {
-  "name"           : "Simple-DNS-Server",
+  "name"           : "SimpleDNSServer",
+  "description"    : "a workable version of DNS Server",  
   "dependencies"   : {
-                      "native-dns" : "*"
+                      "native-dns" : "0.4.1"
                      },
-  "main"           : "./DNSServer.js",
-  "version"        : "0.0.1"
+  "keywords"       : ["dns", "dns server"],
+  "main"           : "DNSServer.js",
+  "version"        : "0.0.1",
+  "type"           : "git",
+  "url"            : "https://github.com/BejoTW/Simple-NodeJS-DNS-Server.git"
 }
