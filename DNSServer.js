@@ -1,3 +1,4 @@
+"use strict";
 //import required libraries
 var dns = require('native-dns');
 
@@ -5,7 +6,7 @@ var customEntries = {
         'securea.mlb.com': [
                 {
                         name: 'securea.mlb.com',
-                        address: '10.5.161.61',
+                        address: '10.5.161.131',
                         ttl: 30
                 }
         ],
@@ -42,10 +43,13 @@ server.on('request', function (request, response) {
                 });
                 
                 req.on('message', function (err, answer) {
-                        var entries = [];
                         answer.answer.forEach(function (a) {
                             if (a.address != undefined) {
-                                response.answer.push(dns.A(a))
+                                response.answer.push(dns.A({
+                                name: domain,
+                                address: a.address,
+                                ttl: 600,
+                                }))
                             }
                         });
                         response.send();
